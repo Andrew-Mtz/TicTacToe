@@ -1,7 +1,9 @@
+@import  '../../../public/mixins.scss';
+
 .Tablero {
   display: grid;
-  grid-template-columns: 6rem 6rem 6rem;
-  grid-template-rows: 6rem 6rem 6rem 6rem 6rem;
+  grid-template-columns: 5rem 5rem 5rem;
+  grid-template-rows: 5rem 5rem 5rem 5rem 5rem;
   grid-template-areas: 
   "logo turno reinicio"
   "main main main"
@@ -15,4 +17,12 @@
   background-color: #192a32;
   height: 100vh;
   align-content: center;
+  @include tablet {
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem 6rem 6rem;
+  }
+  @include desktop {
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem 6rem 6rem;
+  }
 }

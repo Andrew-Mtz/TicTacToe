@@ -1,16 +1,28 @@
+@import  '../../../public/mixins.scss';
+
 .BodyMenuContainer{
   background-color: #1f3540;
-  width: 45%;
+  width: 85%;
   border-radius: 11px;
   box-shadow: 0px 5px #102129;
   margin: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include tablet {
+    width: 45%;
+  }
+  @include desktop {
+    width: 45%;
+  }
 }
 
-.BodyMenuContainer > p{
-  color: white;
+.BodyMenuContainer > .Title{
+  color: #97adb8;
+}
+
+.BodyMenuContainer > .Info{
+  color: #485e69;
 }
 
 .MarkPikerContainer {

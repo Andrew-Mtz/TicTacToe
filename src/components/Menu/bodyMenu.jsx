@@ -12,11 +12,11 @@ function BodyMenu() {
 
   return (
     <div className={styles.BodyMenuContainer}>
-      <p>PICK PLAYER 1'S MARK</p>
+      <p className={styles.Title}>PICK PLAYER 1'S MARK</p>
       <div className={styles.MarkPikerContainer}>
         <MarkPiker funcion={chooseUser} />
       </div>
-      <p>REMEMBER X GOES FIRST</p>
+      <p className={styles.Info}>REMEMBER X GOES FIRST</p>
     </div>
   )
 }

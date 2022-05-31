@@ -33,7 +33,7 @@ function PopUp({ Winner, Open, resetValues }) {
                 <FontAwesomeIcon icon={faXmark} className={stylesIcons.xIcon} />
                 <FontAwesomeIcon icon={faO} className={stylesIcons.oIcon} />
               </>}<h1 style={{color: winner === "x"? "#31c4c0" : winner === "o" ? "#f3b036" : "#a8bec9" }}>TAKES THE ROUND</h1></div>
-        <button className={styles.BtnQuit} onClick={() => navigate("/")} >QUIT</button>
+        <button className={styles.BtnQuit} onClick={() => navigate("/TicTacToe")} >QUIT</button>
         <button className={styles.BtnNext} onClick={() => resetValues()} >NEXT ROUND</button>
       </div>
       :
