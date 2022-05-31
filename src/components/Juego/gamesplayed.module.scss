@@ -1,0 +1,10 @@
+.GamesContainer{
+  display: grid;
+  grid-template-columns: 6rem 6rem 6rem;
+  column-gap: 10px;
+  row-gap: 15px;
+  align-items: center;
+  background-color: #192a32;
+  grid-area: footer;
+  align-self: start;
+}

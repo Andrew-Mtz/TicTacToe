@@ -1,0 +1,57 @@
+.Container {
+  height: 200px;
+  background-color: #1f3540;
+  position: fixed;
+  top: 305px;
+  left: 0;
+  right: 0;
+  transition: opacity 500ms;
+}
+
+.Result {
+  color: white;
+  margin-bottom: 0px;
+}
+
+.BtnQuit {
+  background-color: #a8bec9;
+  color: #1f3540;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.BtnNext {
+  background-color: #f3b036;
+  color: #1f3540;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.WinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  color: #31c4c0;
+}
+
+.WinnerContainer > svg {
+  margin-right: 15px;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}

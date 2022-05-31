@@ -1,0 +1,43 @@
+.Casillas {
+  background-color: #1f3540;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 11px;
+  box-shadow: 0px 5px #102129;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CasillasWon {
+  background-color: #31c4c0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 11px;
+  box-shadow: 0px 5px #102129;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xIcon {
+  font-size: 3rem;
+  color: #31c4c0;
+}
+
+.xIconWon {
+  font-size: 3rem;
+  color: #1f3540;
+}
+
+.oIconWon {
+  font-size: 2.7rem;
+  color: #1f3540;
+}
+
+.oIcon {
+  font-size: 2.7rem;
+  color: #f0b233;
+}

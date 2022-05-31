@@ -1,0 +1,29 @@
+.MarkPikerContainer {
+  width: 80%;
+  background-color: #192a32;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.BtnPicker {
+  width: 50%;
+  border: none;
+  background-color: #192a32;
+  color: #a6bac3;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.BtnPickerSelected {
+  width: 50%;
+  border: none;
+  background-color: #a6bac3;
+  color: #192a32;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.Icon {
+  font-size: 28px;
+}
