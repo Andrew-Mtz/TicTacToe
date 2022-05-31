@@ -6,8 +6,9 @@ import PopUp from './popUp'
 import styles from './tablero.module.scss'
 import Board from "../../classes/board.js";
 import Player from "../../classes/player.js";
+import toast, { Toaster } from 'react-hot-toast';
 
-function Tablero({casillas}) {
+function Tablero({ casillas }) {
 
   const [open, setOpen] = useState(false)
   const [winner, setWinner] = useState()
@@ -24,8 +25,11 @@ function Tablero({casillas}) {
     setOpen(!open)
   }
 
+  const notify = (text) => toast(text, {
+    icon: 'ℹ',
+  });
+
   //this function get Best Move and mark on there
-  console.log(casillas)
   const cpuMark = () => {
     const newValue = cpu.mark;
     let valuesAvaibles = []
@@ -37,12 +41,8 @@ function Tablero({casillas}) {
     const board = new Board(valores);
     const p = new Player();
     const bestMove = parseInt(p.getBestMove(board, true)); //false for minimizing turn
-    console.log(p.nodesMap);
-    console.log(bestMove);
-    console.log(valores);
     const valoresUpdated = valores.map((value, index) => {
       if (index === bestMove && value === "") {
-        console.log(index, bestMove)
         return newValue;
       }
       return value;
@@ -74,6 +74,8 @@ function Tablero({casillas}) {
           return value;
         });
         setValores(valoresUpdated)
+      } else {
+        notify('box not available')
       }
     }
   }
@@ -104,7 +106,7 @@ function Tablero({casillas}) {
         });
         setValores(valoresUpdated)
       } else {
-        return console.log("Pruebe otra casilla")
+        return notify('box not available')
       }
     }
   }
@@ -150,9 +152,15 @@ function Tablero({casillas}) {
 
   return (
     <div className={styles.Tablero} >
+      <Toaster toastOptions={{
+        duration: 2500,
+        style: {
+          background: '#1f3540',
+          color: '#fff',
+        }
+      }} />
       <Header turn={turn} funcion={reiniciar} />
-      { casillas.map((casilla, i) => {
-        console.log(i)
+      {casillas.map((casilla, i) => {
         return <Casillas key={i} id={i} valor={valores[i]} turn={turn} funcion={cpu.selected === false ? marcar2V2 : marcar1} />
       })
       }
