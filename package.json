@@ -16,6 +16,7 @@
     "sass": "^1.50.0",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "TicTacToe",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
