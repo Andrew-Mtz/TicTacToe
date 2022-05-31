@@ -1,16 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
 import styles from './menuBtn.module.scss'
 
-function MenuBtn({ text, color, colorShadow, link, funcion }) {
-
-  let navigate = useNavigate();
+function MenuBtn({ text, color, colorShadow, funcion }) {
 
   return (
     <button
       style={{ backgroundColor: color, boxShadow: '0px 3px ' + colorShadow }}
       className={styles.BtnMenu}
-      onClick={() => {funcion(); navigate(link)}} >
+      onClick={() => funcion()} >
       {text}
     </button>
   )

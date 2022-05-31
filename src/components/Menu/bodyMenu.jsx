@@ -1,7 +1,6 @@
 import styles from './bodyMenu.module.scss'
 import MarkPiker from './markPiker'
 
-
 function BodyMenu() {
 
   const chooseUser = (mark, mark2) => {
