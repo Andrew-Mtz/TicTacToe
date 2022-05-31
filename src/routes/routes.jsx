@@ -7,7 +7,7 @@ const Rutas = () => (
   <Routes>
     <Route path='/gameVScpu' element={<Game />} />
     <Route path='/gameVSp2' element={<Game />} />
-    <Route path='/' element={<Inicio />} />
+    <Route path='/TicTacToe' element={<Inicio />} />
   </Routes>
 );
 
