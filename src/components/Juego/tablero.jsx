@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { useEffect, useState } from 'react'
 import Casillas from './casillas'
 import Gamesplayed from './gamesplayed'
@@ -19,6 +20,7 @@ function Tablero({ casillas }) {
   const [valores, setValores] = useState(["", "", "", "", "", "", "", "", ""])
   const [turn, setTurn] = useState(!JSON.parse(window.sessionStorage.getItem("cpu")).turn)
   const [cpu, setCpu] = useState(JSON.parse(window.sessionStorage.getItem("cpu")))
+  const [difficulty, setDifficulty] = useState(window.sessionStorage.getItem("difficulty"))
 
   const openModal = (winner) => {
     setWinner(winner)
@@ -40,7 +42,23 @@ function Tablero({ casillas }) {
     });
     const board = new Board(valores);
     const p = new Player();
-    const bestMove = parseInt(p.getBestMove(board, true)); //false for minimizing turn
+    let bestMove = null;
+    switch (cpu.mark) {
+      case "x":
+        if (difficulty === "easy") {
+          bestMove = parseInt(p.getBestMove(board, false));//false for minimizing turn
+        } else {
+          bestMove = parseInt(p.getBestMove(board, true));//true for maximizing turn
+        }
+        break;
+      case "o":
+        if (difficulty === "easy") {
+          bestMove = parseInt(p.getBestMove(board, true));//true for maximizing turn
+        } else {
+          bestMove = parseInt(p.getBestMove(board, false));//false for minimizing turn
+        }
+        break;
+    }
     const valoresUpdated = valores.map((value, index) => {
       if (index === bestMove && value === "") {
         return newValue;

@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './menu.module.scss'
 import HeaderMenu from './headerMenu'
 import BodyMenu from './bodyMenu'
 import MenuBtn from './menuBtn'
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
+import MenuBtnMultiple from './menuBtnMultiple'
 
 function Menu() {
+
+  const [mouseEnter, setMouseEnter] = useState(false);
 
   let navigate = useNavigate();
 
@@ -51,7 +54,7 @@ function Menu() {
       }} />
       <HeaderMenu />
       <BodyMenu />
-      <MenuBtn text={"NEW GAME (VS CPU)"} funcion={setCpuPlayer} color="#f3b036" colorShadow={"#c58b1b"} />
+      <MenuBtnMultiple text={"NEW GAME (VS CPU)"} funcion={setMouseEnter} funcionPlay={setCpuPlayer} mouseEnter={mouseEnter} />
       <MenuBtn text={"NEW GAME (VS PLAYER 2)"} funcion={setP2Player} color="#31c4c0" colorShadow={"#0e8c88"} />
     </div>
   )

@@ -1,0 +1,69 @@
+@import  '../../../public/mixins.scss';
+
+.MenuBtnMultiple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3b036;
+  box-shadow: 0px 3px #c58b1b;
+  border-radius: 11px;
+  padding: 12px;
+  width: 77%;
+  border: none;
+  margin: 10px;
+  @include tablet {
+    width: 43%;
+  }
+  @include desktop {
+    width: 43%;
+  }
+}
+
+.MenuBtnMultiple > button {
+  width: 15%;
+  border: 2px solid #192a32;
+  border-radius: 5px;
+  background: none;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #192a32;
+  cursor: pointer;
+}
+
+.MenuBtnMultiple > button:hover {
+  background-color: #192a32;
+  color: #f3b036;
+}
+
+.MenuBtnMultipleLeft {
+  padding: 4px 0px 4px 3px;
+}
+
+.MenuBtnMultipleLeft > svg {
+  font-size: 1.5em;
+}
+
+.MenuBtnMultipleRight {
+  padding: 4px 0px 4px 0px;
+}
+
+.MenuBtnMultipleRight > svg {
+  font-size: 1.5em;
+}
+
+.PopoverContainer {
+  height: 100px;
+  width: 250px;
+  background-color: #1f3540;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #192a32;
+}
+
+.PopoverContainer > h1{
+  font-size: large;
+  color: #97adb8;
+}
+
