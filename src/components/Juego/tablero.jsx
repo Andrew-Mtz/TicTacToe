@@ -112,6 +112,7 @@ function Tablero({ casillas }) {
     if (jugar === 1) {
       if (valor === "" && turn === true) {
         setTurn(false)
+        setTurnX(!turnX)
         const idToUpdate = id;
         const newValue = "x";
         const valoresUpdated = valores.map((value, index) => {
@@ -123,6 +124,7 @@ function Tablero({ casillas }) {
         setValores(valoresUpdated)
       } else if (valor === "" && turn === false) {
         setTurn(true)
+        setTurnX(!turnX)
         const idToUpdate = id;
         const newValue = "o";
         const valoresUpdated = valores.map((value, index) => {
