@@ -19,6 +19,7 @@ function Tablero({ casillas }) {
   const [jugar, setJugar] = useState(1)
   const [valores, setValores] = useState(["", "", "", "", "", "", "", "", ""])
   const [turn, setTurn] = useState(!JSON.parse(window.sessionStorage.getItem("cpu")).turn)
+  const [turnX, setTurnX] = useState(true)
   const [cpu, setCpu] = useState(JSON.parse(window.sessionStorage.getItem("cpu")))
   const [difficulty, setDifficulty] = useState(window.sessionStorage.getItem("difficulty"))
 
@@ -65,36 +66,44 @@ function Tablero({ casillas }) {
       }
       return value;
     });
-    setValores(valoresUpdated)
+    setValores(valoresUpdated);
+    setCpu({ ...cpu, turn: !cpu.turn })
+    setTurn(!turn)
+    setTurnX(!turnX)
   }
 
   //check if cpu is selected and if it's your turn
-  if (cpu.selected === true) {
+  if (jugar === 1 && cpu.selected === true) {
     if (cpu.turn === true) {
-      setCpu({ ...cpu, turn: !cpu.turn })
-      setTurn(!turn)
-      cpuMark()
+      setTimeout(() => {
+        cpuMark()
+      }, 500);
     }
   }
 
   //1 player moves
   const marcar1 = (valor, turn, id) => {
     if (jugar === 1) {
-      if (valor === "" && turn === true) {
-        setTurn(!turn)
-        setCpu({ ...cpu, turn: !cpu.turn })
-        const idToUpdate = id;
-        const newValue = window.sessionStorage.getItem("player1");
-        const valoresUpdated = valores.map((value, index) => {
-          if (index === idToUpdate) {
-            return newValue;
-          }
-          return value;
-        });
-        setValores(valoresUpdated)
-      } else {
+      if (valor !== "") {
         notify('box not available')
+        return
       }
+      if (turn === false) {
+        notify('wait for your turn')
+        return
+      }
+      setTurnX(!turnX)
+      setTurn(!turn)
+      setCpu({ ...cpu, turn: !cpu.turn })
+      const idToUpdate = id;
+      const newValue = window.sessionStorage.getItem("player1");
+      const valoresUpdated = valores.map((value, index) => {
+        if (index === idToUpdate) {
+          return newValue;
+        }
+        return value;
+      });
+      setValores(valoresUpdated)
     }
   }
 
@@ -141,30 +150,32 @@ function Tablero({ casillas }) {
 
   //check after each move if there is a winner or a tie
   useEffect(() => {
-    if (
-      // Horizontal
-      (valores[0] === "x" && valores[1] === "x" && valores[2] === "x") || (valores[3] === "x" && valores[4] === "x" && valores[5] === "x") || (valores[6] === "x" && valores[7] === "x" && valores[8] === "x")
-      // Vertical
-      || (valores[0] === "x" && valores[3] === "x" && valores[6] === "x") || (valores[1] === "x" && valores[4] === "x" && valores[7] === "x") || (valores[2] === "x" && valores[5] === "x" && valores[8] === "x")
-      // Diagonal
-      || (valores[0] === "x" && valores[4] === "x" && valores[8] === "x") || (valores[2] === "x" && valores[4] === "x" && valores[6] === "x")) {
-      openModal("x")
-      setJugar(0)
-      setCountX(countX + 1)
-    } else if
-      // Horizontal
-      ((valores[0] === "o" && valores[1] === "o" && valores[2] === "o") || (valores[3] === "o" && valores[4] === "o" && valores[5] === "o") || (valores[6] === "o" && valores[7] === "o" && valores[8] === "o")
-      // Vertical
-      || (valores[0] === "o" && valores[3] === "o" && valores[6] === "o") || (valores[1] === "o" && valores[4] === "o" && valores[7] === "o") || (valores[2] === "o" && valores[5] === "o" && valores[8] === "o")
-      // Diagonal
-      || (valores[0] === "o" && valores[4] === "o" && valores[8] === "o") || (valores[2] === "o" && valores[4] === "o" && valores[6] === "o")) {
-      openModal("o")
-      setJugar(0)
-      setCountO(countO + 1)
-    } else if (valores[0] !== "" && valores[1] !== "" && valores[2] !== "" && valores[3] !== "" && valores[4] !== "" && valores[5] !== "" && valores[6] !== "" && valores[7] !== "" && valores[8] !== "") {
-      openModal("Ties")
-      setJugar(0)
-      setTries(tries + 1)
+    if (jugar === 1) {
+      if (
+        // Horizontal
+        (valores[0] === "x" && valores[1] === "x" && valores[2] === "x") || (valores[3] === "x" && valores[4] === "x" && valores[5] === "x") || (valores[6] === "x" && valores[7] === "x" && valores[8] === "x")
+        // Vertical
+        || (valores[0] === "x" && valores[3] === "x" && valores[6] === "x") || (valores[1] === "x" && valores[4] === "x" && valores[7] === "x") || (valores[2] === "x" && valores[5] === "x" && valores[8] === "x")
+        // Diagonal
+        || (valores[0] === "x" && valores[4] === "x" && valores[8] === "x") || (valores[2] === "x" && valores[4] === "x" && valores[6] === "x")) {
+        openModal("x")
+        setJugar(0)
+        setCountX(countX + 1)
+      } else if
+        // Horizontal
+        ((valores[0] === "o" && valores[1] === "o" && valores[2] === "o") || (valores[3] === "o" && valores[4] === "o" && valores[5] === "o") || (valores[6] === "o" && valores[7] === "o" && valores[8] === "o")
+        // Vertical
+        || (valores[0] === "o" && valores[3] === "o" && valores[6] === "o") || (valores[1] === "o" && valores[4] === "o" && valores[7] === "o") || (valores[2] === "o" && valores[5] === "o" && valores[8] === "o")
+        // Diagonal
+        || (valores[0] === "o" && valores[4] === "o" && valores[8] === "o") || (valores[2] === "o" && valores[4] === "o" && valores[6] === "o")) {
+        openModal("o")
+        setJugar(0)
+        setCountO(countO + 1)
+      } else if (valores[0] !== "" && valores[1] !== "" && valores[2] !== "" && valores[3] !== "" && valores[4] !== "" && valores[5] !== "" && valores[6] !== "" && valores[7] !== "" && valores[8] !== "") {
+        openModal("Ties")
+        setJugar(0)
+        setTries(tries + 1)
+      }
     }
   }, [valores])
 
@@ -177,7 +188,7 @@ function Tablero({ casillas }) {
           color: '#fff',
         }
       }} />
-      <Header turn={turn} funcion={reiniciar} />
+      <Header turn={turnX} funcion={reiniciar} />
       {casillas.map((casilla, i) => {
         return <Casillas key={i} id={i} valor={valores[i]} turn={turn} funcion={cpu.selected === false ? marcar2V2 : marcar1} />
       })
