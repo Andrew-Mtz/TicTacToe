@@ -32,8 +32,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "tic-tac-toe",
-      "tic-tac-toe/jest"
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
