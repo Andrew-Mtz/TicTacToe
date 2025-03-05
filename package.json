@@ -23,12 +23,12 @@
   },
   "homepage": "http://Andrew-Mtz.github.io/TicTacToe",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "pnpm exec react-scripts start",
+    "build": "pnpm exec react-scripts build",
+    "test": "pnpm exec react-scripts test",
+    "eject": "pnpm exec react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

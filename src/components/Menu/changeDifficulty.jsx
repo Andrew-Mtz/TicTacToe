@@ -1,40 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from "react";
 import Switch from "react-switch";
-import styles from './changeDifficulty.module.scss'
+import styles from "./changeDifficulty.module.scss";
+import GameContext from "../../context/GameContext";
 
 function ChangeDifficulty() {
-
-  const [hard, setHard] = useState(false)
+  const { difficulty, setDifficulty } = useContext(GameContext);
 
   const handleChange = () => {
-    setHard(!hard)
-  }
-
-  useEffect(() => {
-    if (hard) {
-      window.sessionStorage.setItem("difficulty", 'hard');
-    } else {
-      window.sessionStorage.setItem("difficulty", 'easy');
-    }
-  }, [hard])
+    setDifficulty(difficulty === "hard" ? "easy" : "hard");
+  };
 
   return (
-    <div className={styles.SwitchContainer} >
-      <p  style={ hard ? {  color: '#97adb8'} : {  color: '#31c4c0'}} >MEDIUM</p>
+    <div className={styles.SwitchContainer}>
+      <p
+        style={
+          difficulty === "hard" ? { color: "#97adb8" } : { color: "#31c4c0" }
+        }
+      >
+        EASY
+      </p>
       <Switch
         width={65}
         height={23}
         uncheckedIcon={false}
         checkedIcon={false}
-        onColor={'#192a32'}
-        offColor={'#192a32'}
-        onHandleColor={'#f3b036'}
-        offHandleColor={'#31c4c0'}
+        onColor={"#192a32"}
+        offColor={"#192a32"}
+        onHandleColor={"#f3b036"}
+        offHandleColor={"#31c4c0"}
         onChange={handleChange}
-        checked={hard} />
-      <p style={ hard ? {  color: '#f3b036'} : {  color: '#97adb8'}} >HARD</p>
+        checked={difficulty === "hard"}
+      />
+      <p
+        style={
+          difficulty === "hard" ? { color: "#f3b036" } : { color: "#97adb8" }
+        }
+      >
+        HARD
+      </p>
     </div>
-  )
+  );
 }
 
-export default ChangeDifficulty
+export default ChangeDifficulty;

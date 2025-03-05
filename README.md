@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 🏆 Ta-Te-Ti con IA Mejorada
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un clásico juego de **Ta-Te-Ti (Tic-Tac-Toe)** con modo **1 vs 1 local** y **modo contra IA** con dos niveles de dificultad. 🚀
 
-## Available Scripts
+## 🎮 Jugar ahora
 
-In the project directory, you can run:
+👉 **[Jugar en GitHub Pages](https://tu-usuario.github.io/tu-repo/)**
 
-### `npm start`
+## ✨ Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🧑‍🤝‍🧑 **Modo 2 jugadores en local.**
+- 🤖 **Modo IA con dos niveles de dificultad:**
+  - 🟢 **Fácil:** Ahora sí puedes ganarle a la IA.
+  - 🔴 **Difícil:** La IA juega estratégicamente y solo puedes empatar.
+- 🛠 **Usa React con Providers** para gestionar la configuración del juego.
+- ⚡ **Optimizado con pnpm** en lugar de npm para mayor velocidad.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📸 Capturas de pantalla (Opcional)
 
-### `npm test`
+Agrega aquí imágenes o GIFs del juego en acción. Puedes usar herramientas como [ScreenToGif](https://www.screentogif.com/) para grabar una animación.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🤖 IA del juego
 
-### `npm run build`
+La IA usa un **algoritmo de poda** en lugar de Minimax para mejorar su rendimiento.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- En **modo fácil**, tiene errores intencionales para que el jugador pueda ganar.
+- En **modo difícil**, la IA juega de forma óptima y solo puedes empatar.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tecnologías usadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**
+- **pnpm**
+- **Context API (Provider)**
+- **Algoritmo de poda para la IA**
 
-### `npm run eject`
+## 📌 Próximas mejoras
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Agregar un contador de victorias/derrotas.
+- Mejorar la UI con animaciones.
+- Agregar sonidos de efecto al jugar.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎮 Contribuciones
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Si quieres mejorar este proyecto, ¡haz un fork y envía un pull request! 🚀
