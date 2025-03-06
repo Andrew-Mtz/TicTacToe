@@ -4,7 +4,7 @@ Un clásico juego de **Ta-Te-Ti (Tic-Tac-Toe)** con modo **1 vs 1 local** y **mo
 
 ## 🎮 Jugar ahora
 
-👉 **[Jugar en GitHub Pages](https://tu-usuario.github.io/tu-repo/)**
+👉 **[Jugar en GitHub Pages](https://andrew-mtz.github.io/TicTacToe/)**
 
 ## ✨ Características
 
@@ -15,9 +15,9 @@ Un clásico juego de **Ta-Te-Ti (Tic-Tac-Toe)** con modo **1 vs 1 local** y **mo
 - 🛠 **Usa React con Providers** para gestionar la configuración del juego.
 - ⚡ **Optimizado con pnpm** en lugar de npm para mayor velocidad.
 
-## 📸 Capturas de pantalla (Opcional)
+### 🎮 Vista previa del juego
 
-Agrega aquí imágenes o GIFs del juego en acción. Puedes usar herramientas como [ScreenToGif](https://www.screentogif.com/) para grabar una animación.
+![Ta-Te-Ti en acción](assets/game-preview.gif)
 
 ## 🤖 IA del juego
 
