@@ -35,7 +35,6 @@ La IA usa un **algoritmo de poda** en lugar de Minimax para mejorar su rendimien
 
 ## 📌 Próximas mejoras
 
-- Agregar un contador de victorias/derrotas.
 - Mejorar la UI con animaciones.
 - Agregar sonidos de efecto al jugar.
 
